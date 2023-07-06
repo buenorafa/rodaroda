@@ -4,7 +4,7 @@ Bem-vindo ao _Roda-a-Roda_, uma aplicação em Python que simula o famoso jogo d
 
 ## Funcionalidades
 
-- Escolha do número de jogadores: Antes de iniciar o jogo, você poderá escolher a quantidade de jogadores que irão participar. O jogo suporta de 1 a 4 jogadores.
+- Escolha do número de jogadores: Antes de iniciar o jogo, você poderá escolher a quantidade de jogadores que irão participar.
 
 - Girar a roda: Em cada rodada, os jogadores terão a chance de girar a roda para determinar o valor que cada letra adivinhada irá render.
 
@@ -27,3 +27,13 @@ TODO
 ### Protocolo de aplicação
 
 [Documentação do Protocolo]("./doc-protocolo.pdf")
+
+### Discentes
+
+- Antonio Victor Alves da Costa
+
+- Filipe da Silva Rodrigues
+
+- Pedro Henrique B. de Sousa
+
+- Rafael Limeira de Castro Bueno

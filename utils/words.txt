@@ -1,0 +1,58 @@
+abacaxi;fruta tropical;alimentos
+amor;sentimento intenso;emocoes
+arco-iris;fenomeno optico;natureza
+aviao;meio de transporte;meios de transporte
+balao;objeto inflado;brinquedos
+banana;fruta amarela;alimentos
+barco;embarcacao;meios de transporte
+basquete;esporte com bola;esportes
+bateria;instrumento musical;musica
+bicicleta;veiculo de duas rodas;meios de transporte
+bruxa;personagem magica;fantasia
+cachorro;animal domestico;animais
+camisa;peca de roupa;vestuario
+caneta;instrumento de escrita;utensilios
+carro;veiculo motorizado;meios de transporte
+casa;moradia;arquitetura
+cereja;fruta vermelha;alimentos
+chave;objeto para abrir fechaduras;utensilios
+chocolate;doce;alimentos
+computador;dispositivo eletronico;tecnologia
+coracao;orgao vital;anatomia
+coruja;ave noturna;animais
+danca;expressao artistica;artes
+diamante;pedra preciosa;joias
+dinossauro;animal pre-historico;animais
+dolar;unidade monetaria;economia
+elefante;animal terrestre;animais
+espada;arma de lamina;armas
+estrela;corpo celeste;astronomia
+fada;ser mitologico;fantasia
+fogo;elemento quimico;ciencias
+flor;estrutura reprodutiva de plantas;botanica
+futebol;esporte com bola;esportes
+garfo;talher;utensilios
+gato;animal domestico;animais
+girafa;animal de pescoco longo;animais
+guitarra;instrumento musical;musica
+helicoptero;aeronave de decolagem vertical;meios de transporte
+janela;abertura em uma parede;arquitetura
+leao;animal selvagem;animais
+lua;satelite natural;astronomia
+maca;fruta vermelha;alimentos
+martelo;ferramenta de impacto;ferramentas
+melancia;fruta grande e suculenta;alimentos
+monstro;criatura assustadora;fantasia
+montanha;formacao geologica;geografia
+navio;embarcacao maritima;meios de transporte
+neve;precipitacao congelada;clima
+nuvem;massa de vapor de agua;meteorologia
+oculos;acessorio para a visao;utensilios
+ouro;metal precioso;minerais
+palhaco;personagem de circo;entretenimento
+passaro;animal com asas;animais
+peixe;animal aquatico;animais
+pincel;ferramenta de pintura;arte
+pipoca;lanche estourado de milho;alimentos
+pirata;aventureiro dos mares;historia
+caminhao;frete;veiculos

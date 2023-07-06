@@ -4,8 +4,9 @@ from threading import Lock
 from prettytable import PrettyTable
 from utils import terminal_cleaner
 
+
 class Client():
-    def __init__(self, HOST: str, PORT:int):
+    def __init__(self, HOST: str, PORT: int):
         self.name = None
         self.server = (HOST, PORT)
         self.MSG_LEN = 1024     # Message's max length
@@ -13,16 +14,16 @@ class Client():
         self.choosed_letters = []
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-
     # Método para receber msg do servidor
+
     def msg_receive(self):
         while True:
             new_msg = self.socket.recv(self.MSG_LEN).decode().split(":")
             if not self.treat_msg(new_msg):
                 break
 
-
     # Método para tratar as mensagens recebidas pelo servidor
+
     def treat_msg(self, msg: str):
         # Recebe solicitação GET_NAME do nome do jogador
         if msg[0] == "GET_NAME":
@@ -38,7 +39,8 @@ class Client():
                 self.socket.send(msg_back.encode())
 
                 # Aguarda a confirmação do servidor pelo SEND_CONF
-                resp_server = self.socket.recv(self.MSG_LEN).decode().split(":")
+                resp_server = self.socket.recv(
+                    self.MSG_LEN).decode().split(":")
                 if resp_server[1] == "+FAIL":
                     continue
                 if resp_server[1] == "+OK":
@@ -51,7 +53,7 @@ class Client():
 
                 # Retorna para o msg_receive e espera nova msg do servidor
                 return True
-        
+
         elif msg[0] == "BROADCAST":
             # Imprime e trata o ESTADO DO JOGO do lado do cliente
             if msg[1] == "STATUS":
@@ -68,7 +70,7 @@ class Client():
                 self.socket.send(protocol.send_conf("+OK").encode())
                 # Retorna para o msg_receive e espera nova msg do servidor
                 return True
-            
+
             # Imprime o ranking final do jogo e envia a confirmação para o servidor
             elif msg[1] == "SEND_RANKING":
                 terminal_cleaner.terminal_cleaner()
@@ -76,12 +78,12 @@ class Client():
                 print("RODA A RODA")
                 print("===================")
                 print("Ranking de Jogadores:")
-                for i in range(2,len(msg)):
+                for i in range(2, len(msg)):
                     print(msg[i])
                 self.socket.send(protocol.send_conf("+OK").encode())
                 # Retorna para o msg_receive e espera nova msg do servidor
                 return True
-            
+
             # Confirma para o servidor que recebeu a mensagem de game over e para de ouvir no msg_receive, indo para o encerramento do cliente
             elif msg[1] == "GAME_OVER":
                 print("===================")
@@ -89,7 +91,7 @@ class Client():
                 print("===================")
                 self.socket.send(protocol.send_conf("+OK").encode())
                 return False
-                       
+
             # Imprime todas as mensagens de broadcast genéricas
             terminal_cleaner.terminal_cleaner()
             print("===================")
@@ -101,7 +103,7 @@ class Client():
 
             # Retorna para o msg_receive e espera nova msg do servidor
             return True
-        
+
         # trata o turno do jogador
         elif msg[0] == "SEND_TURN":
             # chama o menu do jogo de acordo com os parâmetros iformados pelo servidor, vide doc do protocolo
@@ -117,7 +119,8 @@ class Client():
                 while True:
                     msg_back = protocol.send_letter(letter)
                     self.socket.send(msg_back.encode())
-                    resp_server = self.socket.recv(self.MSG_LEN).decode().split(":")
+                    resp_server = self.socket.recv(
+                        self.MSG_LEN).decode().split(":")
                     if resp_server[1] == "+FAIL":
                         continue
                     if resp_server[1] == "+OK":
@@ -130,7 +133,8 @@ class Client():
                     word = input("Escolha a palavra: ").lower()
                     msg_back = protocol.send_word(word)
                     self.socket.send(msg_back.encode())
-                    resp_server = self.socket.recv(self.MSG_LEN).decode().split(":")
+                    resp_server = self.socket.recv(
+                        self.MSG_LEN).decode().split(":")
                     if resp_server[1] == "+FAIL":
                         continue
                     if resp_server[1] == "+OK":
@@ -138,8 +142,8 @@ class Client():
                         break
             return True
 
-
     # Método do menu do jogo
+
     def menu(self, option):
         print("\n====================================")
         print(" Digite o número da opção desejada:")
@@ -159,8 +163,7 @@ class Client():
             else:
                 print('Opção inválida! Tente novamente!')
 
-
     def start(self):
-        self.socket.connect(("localhost", 8000))
+        self.socket.connect(self.server)
         self.msg_receive()
         self.socket.close()
